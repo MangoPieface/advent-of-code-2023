@@ -27,7 +27,7 @@ public class Program
             while ((line = reader.ReadLine()) != null)
             {
                 count++;
-                if (IsValidGame(line, 12,13,14))
+                if (IsValidGame(line))
                 {
                     sum += count;
                 }
@@ -36,10 +36,13 @@ public class Program
         Console.WriteLine(sum.ToString());
     }
 
-    public static bool IsValidGame(string game, int maxRedCubes, int maxGreenCubes, int maxBlueCubes)
+    public static bool IsValidGame(string game)
     {
 
-        
+        int maxRedCubes = 12;
+        int maxGreenCubes = 13;
+        int maxBlueCubes = 14;
+
         var lines = game.Split(';');
         string pattern = @"(\d+)\s*([a-zA-Z]+)";
 
